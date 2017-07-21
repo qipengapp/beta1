@@ -1,18 +1,22 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+ <!-- <ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-  <p>qipeng</p>
+</ion-header> -->
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+          <ion-input #box type="text" placeholder="请输入内容" (keyup.enter)="setSrch(box.value)">
+            <!-- [(ngModel)]="srch_key"  -->
+          </ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <!-- <ion-item *ngFor="let item of sr_items">
+            {{item.name}}
+        </ion-item> -->
+    <button ion-item *ngFor="let item of sr_items" (click)="itemSelected(item)">
+        {{item.name}}
+    </button>
+    </ion-list>
 </ion-content>
