@@ -7,12 +7,22 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+<<<<<<< HEAD
 import { CompinfoPage } from '../pages/compinfo/compinfo';
 import { IndustrylistPage } from '../pages/industrylist/industrylist';
 
+=======
+import { WelcomePage } from '../pages/welcome/welcome';
+import { LoginPage } from '../pages/login/login';
+>>>>>>> f0e8302cae0da5500903182744fbabcff7cd1112
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { IonicStorageModule } from '@ionic/Storage';
+import { HttpService } from "../service/http.service";
+import { HttpModule } from "@angular/http";
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -20,13 +30,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
+<<<<<<< HEAD
     TabsPage,
     CompinfoPage,
     IndustrylistPage
+=======
+    WelcomePage,
+    LoginPage,
+    TabsPage
+>>>>>>> f0e8302cae0da5500903182744fbabcff7cd1112
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,14 +52,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
+<<<<<<< HEAD
     TabsPage,
     CompinfoPage,
     IndustrylistPage
+=======
+    WelcomePage,
+    LoginPage,
+    TabsPage
+>>>>>>> f0e8302cae0da5500903182744fbabcff7cd1112
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HttpService
   ]
 })
 export class AppModule {}
