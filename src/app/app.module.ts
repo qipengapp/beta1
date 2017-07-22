@@ -7,14 +7,11 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-<<<<<<< HEAD
 import { CompinfoPage } from '../pages/compinfo/compinfo';
 import { IndustrylistPage } from '../pages/industrylist/industrylist';
 
-=======
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
->>>>>>> f0e8302cae0da5500903182744fbabcff7cd1112
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
