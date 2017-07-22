@@ -27,15 +27,12 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     AboutPage,
     ContactPage,
     HomePage,
-<<<<<<< HEAD
     TabsPage,
     CompinfoPage,
     IndustrylistPage
-=======
     WelcomePage,
     LoginPage,
     TabsPage
->>>>>>> f0e8302cae0da5500903182744fbabcff7cd1112
   ],
   imports: [
     BrowserModule,
@@ -49,15 +46,12 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     AboutPage,
     ContactPage,
     HomePage,
-<<<<<<< HEAD
     TabsPage,
     CompinfoPage,
     IndustrylistPage
-=======
     WelcomePage,
     LoginPage,
     TabsPage
->>>>>>> f0e8302cae0da5500903182744fbabcff7cd1112
   ],
   providers: [
     StatusBar,
