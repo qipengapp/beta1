@@ -29,7 +29,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     HomePage,
     TabsPage,
     CompinfoPage,
-    IndustrylistPage
+    IndustrylistPage,
     WelcomePage,
     LoginPage,
     TabsPage
