@@ -10,7 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CompinfoPage } from '../pages/compinfo/compinfo';
 import { IndustrylistPage } from '../pages/industrylist/industrylist';
 import { WelcomePage } from '../pages/welcome/welcome';
-import { LoginPage } from '../pages/login/login';
+import { LoginPage } from '../pages/login/login'
 import { CodeBean } from '../pages/login/code.bean';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
