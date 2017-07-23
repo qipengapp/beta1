@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class UserBean {
-  private userId: string;
+//   private userId: string;
   private userPhone: string;
   private UserToken: string;
   private loginDate: Date;
@@ -10,13 +10,13 @@ export class UserBean {
   constructor() {
   }
 
-  public getUserId() : string {
-      return this.userId;
-  }
+//   public getUserId() : string {
+//       return this.userId;
+//   }
 
-  public setUserId(Id: string) {
-      this.userId = Id;
-  }
+//   public setUserId(Id: string) {
+//       this.userId = Id;
+//   }
 
   public getUserPhone() : string {
       return this.userPhone;

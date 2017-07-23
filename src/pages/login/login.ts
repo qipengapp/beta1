@@ -130,7 +130,7 @@ export class LoginPage {
         }
         else
         {
-            this.serve.SendLoginStatus(this.input_code, this.input_phone)
+            this.serve.SendLoginStatus(this.input_phone);
             // this.showAlert(this.err, '确定');
         }
     }
