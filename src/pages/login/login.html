@@ -5,29 +5,50 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>登录验证</ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content> 
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-input #numb type="number" placeholder="请输入手机号码" [(ngModel)]="input_phone"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input #code type="text" placeholder="请输入验证码" [(ngModel)]="input_code"></ion-input>
+      </ion-col>
+      <ion-col col-auto text-right>
+        <button ion-button (click)="getPhoneCode()">{{bt_msg}}</button>
+      </ion-col>
+    </ion-row>
 
-<ion-content padding>
+    <ion-row>
+      <ion-col>
+        <button ion-button block (click)="login()">开 始</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+<!-- 
     <div class="hd15 hd_md pd_2"> 
       <ion-input #numb type="number" placeholder="请输入手机号码" (keyup.enter)="setSrch(box.value)" class="bk_f6 hd100">
-              <!-- [(ngModel)]="srch_key"  -->
+              !- [(ngModel)]="srch_key"  -
       </ion-input>
     </div>
 
     <div class="hd15 hd_md pd_2">
       <div class="wd70 fl_left hd100">
         <ion-input #code type="text" placeholder="请输入验证码" class="bk_f6 hd100">
-                <!-- [(ngModel)]="srch_key"  -->
+                !- [(ngModel)]="srch_key"  -
         </ion-input>
       </div>
       <div class="wd30 fl_left hd100">
         <button ion-button (click)="getPhoneCode()">{{bt_msg}}</button>
       </div>
     </div>
+     -->
 </ion-content>
