@@ -102,6 +102,23 @@ app.get('/api/getsrlist:srme', function(req, res){
     // });
 });
 
+app.get('/api/getuser', function(req, res){
+    console.log("Routes -- getuser");
+    console.log(req.query);
+
+    console.log("-------------------------------------------");
+    // console.log(req);
+    
+    // console.log(req);
+
+    // srListModel.findOne({ userPhone: 5 }, function (err, docs) {
+    //     console.log("####### the docs 1 :" + docs);
+    //     res.json(docs);
+    //     console.log("####### the res 1 :" + res);
+    // });
+
+    res.json(req.query);
+});
 
 //     // Get reviews
 //     app.get('/api/reviews', function(req, res) {
