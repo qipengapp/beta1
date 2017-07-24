@@ -17,6 +17,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/Storage';
 import { HttpService } from "../service/http.service";
 import { UserService } from "../service/user.service";
+import { UserBean } from "../service/user.bean";
 import { HttpModule } from "@angular/http";
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
@@ -58,6 +59,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpService,
     UserService,
+    UserBean,
     CodeBean
   ]
 })

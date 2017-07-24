@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
+// import { Storage } from '@ionic/Storage';
 import { HttpService } from "../../service/http.service";
 import { UserService } from "../../service/user.service";
+import { UserBean } from "../../service/user.bean";
 import { CodeBean } from "./code.bean";
+import { NavController, NavParams } from 'ionic-angular';
 
 @Injectable()
 export class LoginService
 {
-    constructor(public myhttp:HttpService, public user:UserService, public b_code: CodeBean) {
+    constructor(public myhttp:HttpService, public user:UserBean, public b_code: CodeBean , public localStorage: Storage) {
     }
 
     private GetNewIdCode() : void
@@ -25,27 +28,40 @@ export class LoginService
         // @预留发送短信代码调用区域
     }
 
-    public SendLoginStatus(input_code : string, input_phone : string) : boolean
+    public SendLoginStatus(input_phone : string) : boolean
     {
-        let checkDt = 2;
-        console.log("########## SendLoginStatus input_code:" + input_code);
+        // @登记用户的登录
+        let loginDate = new Date();
+        this.user.setUserPhone(input_phone);
+        this.user.setLoginDate(loginDate);
+        localStorage.setItem("userPhone", input_phone);
+        localStorage.setItem("loginDate", loginDate.toDateString());
+
+        // this.navCtrl.push(IndustrylistPage, {IndustrylistCallBack: this.IndustrylistCallBack});
+
+        console.log("########## SendLoginStatus loginDate:" + loginDate.toDateString())
         console.log("########## SendLoginStatus getIdCode:" + this.b_code.getIdCode());
         return false;
     }
 
     public CheckIdCode(input_code : string) : string
     {
+        let minutes = 1000 * 60;
         let checkDateNow = new Date();
-        let flr_mut = checkDateNow.getTime() - this.b_code.getIdDate().getTime();
+        let flr_mut = checkDateNow.getTime()/minutes - this.b_code.getIdDate().getTime()/minutes;
+
+        // @判断验证码是否相等
         if(input_code != this.b_code.getIdCode())
         {
             return "CEK-001";
         }
 
         // @准备开始计算差的时间是几分钟
-        console.log("########### this.b_code.getIdDate(): " + this.b_code.getIdDate());
-        console.log("########### checkDateNow: " + checkDateNow);
-        console.log("########### checkDateNow - getIdDate: " + flr_mut);
+        if(flr_mut > 3)
+        {
+            console.log("########### checkDateNow - getIdDate: " + flr_mut);
+            return "CEK-002";
+        }
 
         return "CEK-OK";
     }

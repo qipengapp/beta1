@@ -20,7 +20,7 @@ export class LoginPage {
   private code: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public serve: LoginService, public alertCtrl: AlertController) {
-    this.bt_msg = "2获取验证码";
+    this.bt_msg = "获取验证码";
     this.time = 60;
     this.flag = false;
     this.err = "";
@@ -85,6 +85,7 @@ export class LoginPage {
   // @校验并获取验证码
   // @设置60秒可以触发一次
   public getPhoneCode() : void {
+    this.input_code = "";
     if(this.checkPhone())
     {
         this.time = 60;
@@ -129,7 +130,7 @@ export class LoginPage {
         }
         else
         {
-            this.serve.SendLoginStatus(this.input_code, this.input_phone)
+            this.serve.SendLoginStatus(this.input_phone);
             // this.showAlert(this.err, '确定');
         }
     }
