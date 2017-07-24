@@ -62,7 +62,6 @@ var srListModel = mongoose.model('srlists', srlistSchema);
 // srlistSchema.methods.speak = function () {
 //   var greeting = this.name
 //     ? "Meow name is " + this.name
-//     : "I don't have a name";
 //   console.log(greeting);
 // }
 
@@ -87,12 +86,13 @@ app.get('/api/getsrlist', function(req, res){
     });
 });
 
-app.get('/api/getsrlist:srname', function(req, res){
-    console.log("Routes -- getsrlist -- req.params.srname:" + req.params.srname);
+app.get('/api/getsrlist:srme', function(req, res){
+    console.log("Routes -- getsrlist -- req.params.srme:" + req.params.srname);
     // var pat = RegExp("" + req.params.srname);
-
-    srListModel.find({"name": {'$regex' : ".*" + req.params.srname + ".*"}}, function (err, docs) {
-        console.log("####### the docs 2 :" + docs);
+  //{'$regex' : ".*" + req.params.srname + ".*"}
+    var srname = eval("/"+req.params.srme+"/i");
+    srListModel.find({"name":srname}, function (err, docs) {
+        console.log("####### the docs 2000 :" + docs);
         res.json(docs);
         console.log("####### the res 1 :" + res);
     });
