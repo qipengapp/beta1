@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {UserBean} from './user.bean';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -6,12 +7,4 @@ export class UserService {
   constructor() {
   }
 
-  public get(url: string, paramObj: any) {
-    
-  }
-
-
-  public set(url: string, paramObj: any) {
-
-  }
 }

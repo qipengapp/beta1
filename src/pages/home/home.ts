@@ -16,6 +16,7 @@ import { HomeService } from "./home.service";
   // ,providers: [HelloService, Http]
   ,providers: [HomeService]
 })
+
 export class HomePage {
   // private srch_key:string = "";
   private url: string;

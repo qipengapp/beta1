@@ -30,8 +30,10 @@ export class HttpService {
     //   headers: authHeader
     // })
     
-    console.log("#### #### #### HttpService get - url 3:" + url + this.toQueryString(paramObj));
-    return this.http.get(url + this.toQueryString(paramObj))
+    // console.log("@@@@ @@@@ @@@@ @@@@ @@@@ HttpService get - paramObj:" + paramObj);
+    // console.log("@@@@ @@@@ @@@@ @@@@ @@@@ HttpService get - paramObj JSON:" + JSON.stringify(paramObj));
+    //this.toQueryString(paramObj)
+    return this.http.get(url, paramObj)
       .toPromise()
       .then(res => res.json())
       .catch(error => this.handleError(error));
