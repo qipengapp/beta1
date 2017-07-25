@@ -9,6 +9,7 @@ import { AddressService } from './address.service';
  * on Ionic pages and navigation.
  */
 
+ //Test commit from mac
 @Component({
   selector: 'page-address',
   templateUrl: 'address.html',
