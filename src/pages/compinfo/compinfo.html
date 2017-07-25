@@ -30,6 +30,9 @@
     </ion-item>
     <ion-item>
       <ion-label color="primary">总部所在地</ion-label>
+      <city-picker item-content [cancelText]="'取消'" [doneText]="'完成'" [separator]="' - '" [citiesData]="cityData" [(ngModel)]="cityName"
+        (ionChange)="cityChange($event)">
+      </city-picker>
     </ion-item>
     <ion-item>
       <ion-label color="primary" (click)="pickIndusty()">所属行业<span id="spanIndus">{{industry}}</span></ion-label>
@@ -42,30 +45,30 @@
     </ion-item>
     <ion-item>
       <ion-label color="primary">公司规模</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [readonly]="isReadOnly"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary">近一年销售额（万元）</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [readonly]="isReadOnly"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary">近一年净利润（万元）</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [readonly]="isReadOnly"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary">公司主营业务经营范围</ion-label>
-      <ion-input clearInput></ion-input>
+      <ion-input clearInput [readonly]="isReadOnly"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary">公司优势描述</ion-label>
-      <ion-input clearInput></ion-input>
+      <ion-input clearInput [readonly]="isReadOnly"></ion-input>
     </ion-item>
   </ion-list>
   <ion-buttons>
-    <button ion-button small id="edit-left" tappable (click)="editSR()">
+    <button ion-button middle id="edit-left" tappable (click)="editSR()">
     编辑
   </button>
-    <button ion-button small id="submit-right" [disabled]="isSubmitClicked" (click)="submitSR()">
+    <button ion-button middle id="submit-right" [disabled]="isSubmitClicked" (click)="submitSR()">
     提交
   </button>
   </ion-buttons>

@@ -18,6 +18,9 @@ import { IonicStorageModule } from '@ionic/Storage';
 import { HttpService } from "../service/http.service";
 import { UserService } from "../service/user.service";
 import { HttpModule } from "@angular/http";
+import { CityPickerModule } from  "ionic2-city-picker";
+
+
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
@@ -31,14 +34,14 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     CompinfoPage,
     IndustrylistPage,
     WelcomePage,
-    LoginPage,
-    TabsPage
+    LoginPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    CityPickerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

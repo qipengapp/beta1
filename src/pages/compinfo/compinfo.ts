@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { IndustrylistPage } from '../../pages/industrylist/industrylist';
+import { AddressService } from './address.service';
 
 /**
  * Generated class for the CompinfoPage page.
@@ -13,28 +14,37 @@ import { IndustrylistPage } from '../../pages/industrylist/industrylist';
 @Component({
   selector: 'page-compinfo',
   templateUrl: 'compinfo.html',
+  providers: [AddressService]
 })
 export class CompinfoPage {
   isSubmitClicked: boolean;
+  isReadOnly: boolean;
   CompanyType: string;
   industry = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  cityData: any[]; //城市数据
+  cityName: string = ''; //初始化城市名
+  code: string; //城市编码
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public cityPickerSev: AddressService, ) {
     this.CompanyType = "syqy";
-    
+    this.setCityPickerData();
   }
 
   ionViewDidLoad() {
+    this.isReadOnly = true;
     console.log('ionViewDidLoad CompinfoPage');
   }
 
   //编辑SR
-  editSR(){
+  editSR() {
+    this.isReadOnly = false;
     alert("editSR");
   }
   //提交SR
   submitSR() {
     this.isSubmitClicked = true;
+    this.isReadOnly = true;
     setTimeout(() => {
       this.isSubmitClicked = false;
       alert("submitSR");
@@ -42,18 +52,37 @@ export class CompinfoPage {
   }
 
   pickIndusty() {
-    this.navCtrl.push(IndustrylistPage, {IndustrylistCallBack: this.IndustrylistCallBack});
+    this.navCtrl.push(IndustrylistPage, { IndustrylistCallBack: this.IndustrylistCallBack });
   }
 
   IndustrylistCallBack = (params) => {
-    return new Promise((resolve,reject)=>{
-      if(typeof(params) != 'undefined'){
+    return new Promise((resolve, reject) => {
+      if (typeof (params) != 'undefined') {
         this.industry = params;
         resolve('ok');
-      }else{
+      } else {
         reject(Error('error'));
       }
     });
+  }
+
+  /**
+  * 获取城市数据
+  */
+  setCityPickerData() {
+    this.cityPickerSev.getCitiesData()
+      .then(data => {
+        this.cityData = data;
+      });
+  }
+
+  /**
+   * 城市选择器被改变时触发的事件
+   * @param event
+   */
+  cityChange(event) {
+    console.log(event);
+    this.code = event['region'].value;
   }
 
 }
