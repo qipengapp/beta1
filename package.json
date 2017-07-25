@@ -34,6 +34,7 @@
     "ionic2-city-picker": "0.0.11",
     "ionicons": "3.0.0",
     "jsonwebtoken": "^7.4.1",
+    "jwt-simple": "^0.5.1",
     "method-override": "^2.3.6",
     "mongodb": "^2.2.30",
     "mongoose": "^4.11.3",

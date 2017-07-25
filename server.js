@@ -6,6 +6,8 @@ var morgan = require('morgan');             // log requests to the console (expr
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var cors = require('cors');
+// var jwt        = require("jsonwebtoken")
+var jwt = require("jwt-simple");
 mongoose.Promise = require('bluebird');
  
 // Configuration
@@ -103,21 +105,35 @@ app.get('/api/getsrlist:srme', function(req, res){
 });
 
 app.get('/api/getuser', function(req, res){
+    var userlistSchema = mongoose.Schema({
+        userPhone: String,
+        userToken: String,
+        loginDate: [{Date: String}]
+    });
+
+    var userlistModel = mongoose.model('userlists', userlistSchema);
+
     console.log("Routes -- getuser");
     console.log(req.query);
+    console.log(req.query.userPhone);
+    console.log("Routes -- getuser-----------------------");
 
-    console.log("-------------------------------------------");
-    // console.log(req);
-    
-    // console.log(req);
+    userlistModel.findOne({"userPhone": req.query.userPhone}, function (err, docs) {
+        console.log("####### the docs 1 :" + docs);
+        if(docs == null)
+        {
+            console.log("Routes -- jwt" + jwt.sign(user, process.env.JWT_SECRET));
+            // var user = new userlistModel({
+            //     userPhone: req.query.userPhone,
+            //     userToken: 
+            //     val: 'x' + i
+            // });
+        }
 
-    // srListModel.findOne({ userPhone: 5 }, function (err, docs) {
-    //     console.log("####### the docs 1 :" + docs);
-    //     res.json(docs);
-    //     console.log("####### the res 1 :" + res);
-    // });
+        res.json(docs);
+    });
 
-    res.json(req.query);
+    // res.json(req.query);
 });
 
 //     // Get reviews

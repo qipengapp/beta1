@@ -44,7 +44,7 @@ export class LoginService
         // localStorage.setItem("userPhone", input_phone);
         // localStorage.setItem("loginDate", loginDate.toDateString());
     
-        user = {"userPhone": input_phone, "loginDate": loginDate.toDateString(), "xxxx":{"xx1":"xx1-1", "xx2":"xx2-2"}, "nn":"xx"}
+        user = {"userPhone": input_phone, "loginDate": loginDate.toDateString()}
         console.log("******************** 3 url:" + url);
 
         // this.myhttp.get(url, JSON.stringify(user)).then((json) => {

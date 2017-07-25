@@ -13,7 +13,7 @@ import { Storage } from '@ionic/Storage';
 })
 export class MyApp {
   //rootPage:any = WelcomePage;
-   rootPage:any = TabsPage;
+   rootPage:any = WelcomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public storage: Storage) {
     platform.ready().then(() => {
