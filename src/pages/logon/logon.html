@@ -25,34 +25,62 @@
 
   <!-- <ion-list inset>
     <ion-item>
-        <ion-input #numb type="number" placeholder="请输入手机号码" [(ngModel)]="input_phone"></ion-input>
+        <ion-input #numb type="number" placeholder="请输入手机号码" [(ngModel)]="input_phone" text-center></ion-input>
     </ion-item>
     <ion-item>
-        <ion-input #code type="text" placeholder="请输入密码" [(ngModel)]="input_pwd"></ion-input>
+        <ion-input #code type="text" placeholder="请输入密码" [(ngModel)]="input_pwd" text-center></ion-input>
     </ion-item>
   </ion-list> -->
 
   <div class="input_bk">
     <div class="input_ion">
-        <ion-input #numb type="number" placeholder="请输入手机号码" [(ngModel)]="input_phone" text-center></ion-input>
+        <!-- <ion-icon name="phone-portrait"></ion-icon> -->
+        <!-- <ion-icon name="call"></ion-icon> -->
+        <ion-input #numb type="number" placeholder="请输入手机号码" [(ngModel)]="input_phone" class="input_phone_ip"></ion-input>
     </div>
   </div>
   <div class="input_bk">
     <div class="input_ion">
-        <ion-input #code type="text" placeholder="请输入密码" [(ngModel)]="input_pwd" text-center></ion-input>
+        <!-- <ion-icon name="code-working"></ion-icon> -->
+        <ion-input #code type="text" placeholder="请输入密码" [(ngModel)]="input_pwd" class="input_pwd_ip"></ion-input>
     </div>
+  </div>
+
+  <!-- <ion-grid class="grid_bk">
+    <ion-row>
+      <ion-col text-right>
+         <div class="reg_bk_left">
+            <button ion-button clear color="light" (click)="fg_reg()">注册新用户</button>
+         </div> 
+      </ion-col>
+      <ion-col text-left>
+        <div class="reg_bk_right">
+            <button ion-button clear color="light" (click)="fg_pwd()">忘记密码？</button>
+        </div>
+      </ion-col>
+    </ion-row> -->
+
+  <div class="reg_bk">
+         <div class="reg_bk_left">
+            <button ion-button clear color="light" (click)="fg_reg()">注册新用户</button>
+         </div>
+        <div class="reg_bk_right">
+            <button ion-button clear color="light" (click)="fg_pwd()">忘记密码？</button>
+        </div>
   </div>
 
   <ion-grid class="grid_bk">
     <ion-row>
-      <ion-col text-right>
-        <button ion-button clear color="light" (click)="fg_pwd()">忘记密码？</button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
       <ion-col col-center>
-        <button ion-button round (click)="login()" class="login_btn">开 始</button>
+          <button ion-button round (click)="login()" class="login_btn" color="secondary">开 始</button>
       </ion-col>
     </ion-row>
+
+    <ion-row>
+      <ion-col col-center class="login_notice">
+          登录即表示您同意 《某某某APP用户协议》
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
 </ion-content>

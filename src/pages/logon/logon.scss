@@ -1,6 +1,6 @@
 page-logon {
     .colintest{
-        background: url("../assets/images/slide3.jpg");
+        background: url("../assets/images/login_bk.png");
 
         ion-card{
             background: none;
@@ -9,7 +9,8 @@ page-logon {
             text-align: center;
             
             img{
-                width: 50%;
+                // width: 50%;
+                max-width: 170px;
                 text-align: center;
             }
         }
@@ -22,6 +23,7 @@ page-logon {
             
             img{
                 width: 50%;
+                max-width: 170px;
                 text-align: center;
             }
         }
@@ -37,6 +39,7 @@ page-logon {
 
         .input_ion{
             width: 85%;
+            max-width: 356px;
             margin: 0px auto;
             border-radius: 64px;
             background: url("../assets/images/input_bk_img.png");
@@ -51,10 +54,54 @@ page-logon {
 
         .login_btn{
             width: 85%;
+            max-width: 356px;
         }
 
         .grid_bk{
             padding:0px;
         }
+
+        .input_phone_ip{
+            background: url("../assets/images/tablet_android.png") no-repeat left;
+            padding-left:30px;
+        }
+
+        .input_pwd_ip{
+            background: url("../assets/images/dots-three-horizontal.png") no-repeat left;
+            padding-left:30px;
+        }
+
+        input{
+            letter-spacing:2px;
+        }
+
+        .reg_bk{
+            width:85%;
+            max-width: 356px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .reg_bk_left{
+            width: 42.5%;
+            max-width: 178px;
+            text-align: left;
+            float:left;
+            // width: 85%;
+            // max-width: 356px;
+        }
+
+        .reg_bk_right{
+            width: 42.5%;
+            max-width: 178px;
+            text-align: right;
+            float:right;
+        }
+
+        .login_notice{
+            font-size: 0.8em;
+            color: #ddd;
+        }
+
     }
 }
