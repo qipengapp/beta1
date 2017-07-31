@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
-import { LoginPage } from '../login/login';
+import { LogonPage } from '../logon/logon';
+// import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the WelcomePage page.
@@ -24,6 +25,6 @@ export class WelcomePage {
   }
 
   goToHome(){
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.setRoot(LogonPage);
   }
 }

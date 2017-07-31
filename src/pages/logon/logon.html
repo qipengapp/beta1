@@ -1,0 +1,58 @@
+ <!-- <ion-header>
+  <ion-navbar>
+    <ion-row>
+      <ion-title>登录</ion-title>
+      <ion-buttons end>
+          <button ion-button class="light" clear>注册</button>
+      </ion-buttons>
+    </ion-row>
+  </ion-navbar>
+</ion-header>  -->
+
+<ion-content class="colintest">
+
+  <!-- <ion-card padding>
+      <img src="assets/images/light.png">
+  </ion-card> -->
+
+  <ion-grid padding-top>
+    <ion-row padding-top>
+      <ion-col col-center padding>
+          <img src="assets/images/light.png">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-list inset>
+    <ion-item>
+        <ion-input #numb type="number" placeholder="请输入手机号码" [(ngModel)]="input_phone"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input #code type="text" placeholder="请输入密码" [(ngModel)]="input_pwd"></ion-input>
+    </ion-item>
+  </ion-list> -->
+
+  <div class="input_bk">
+    <div class="input_ion">
+        <ion-input #numb type="number" placeholder="请输入手机号码" [(ngModel)]="input_phone" text-center></ion-input>
+    </div>
+  </div>
+  <div class="input_bk">
+    <div class="input_ion">
+        <ion-input #code type="text" placeholder="请输入密码" [(ngModel)]="input_pwd" text-center></ion-input>
+    </div>
+  </div>
+
+  <ion-grid class="grid_bk">
+    <ion-row>
+      <ion-col text-right>
+        <button ion-button clear color="light" (click)="fg_pwd()">忘记密码？</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-center>
+        <button ion-button round (click)="login()" class="login_btn">开 始</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

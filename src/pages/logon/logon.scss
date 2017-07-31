@@ -1,0 +1,60 @@
+page-logon {
+    .colintest{
+        background: url("../assets/images/slide3.jpg");
+
+        ion-card{
+            background: none;
+            border:none;
+            box-shadow:none;
+            text-align: center;
+            
+            img{
+                width: 50%;
+                text-align: center;
+            }
+        }
+
+        ion-grid{
+            background: none;
+            border:none;
+            box-shadow:none;
+            text-align: center;
+            
+            img{
+                width: 50%;
+                text-align: center;
+            }
+        }
+
+        // ion-input{
+        //     width: 80%;
+        // }
+
+        .input_bk{
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .input_ion{
+            width: 85%;
+            margin: 0px auto;
+            border-radius: 64px;
+            background: url("../assets/images/input_bk_img.png");
+            padding: 2px 15px 2px 15px;
+        }
+
+        ion-input{
+            input{
+                color: #fff;
+            }
+        }
+
+        .login_btn{
+            width: 85%;
+        }
+
+        .grid_bk{
+            padding:0px;
+        }
+    }
+}

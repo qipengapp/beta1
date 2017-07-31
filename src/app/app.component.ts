@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { WelcomePage } from '../pages/welcome/welcome';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LogonPage } from '../pages/logon/logon'
 
 import { Storage } from '@ionic/Storage';
 
@@ -13,7 +14,7 @@ import { Storage } from '@ionic/Storage';
 })
 export class MyApp {
   //rootPage:any = WelcomePage;
-   rootPage:any = WelcomePage;
+   rootPage:any = LogonPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public storage: Storage) {
     platform.ready().then(() => {

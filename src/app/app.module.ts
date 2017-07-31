@@ -10,7 +10,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CompinfoPage } from '../pages/compinfo/compinfo';
 import { IndustrylistPage } from '../pages/industrylist/industrylist';
 import { WelcomePage } from '../pages/welcome/welcome';
-import { LoginPage } from '../pages/login/login'
+// import { LoginPage } from '../pages/login/login'
+import { LogonPage } from '../pages/logon/logon'
 import { CodeBean } from '../pages/login/code.bean';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,7 +36,8 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     CompinfoPage,
     IndustrylistPage,
     WelcomePage,
-    LoginPage
+    LogonPage
+    // LoginPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     CompinfoPage,
     IndustrylistPage,
     WelcomePage,
-    LoginPage,
+    // LoginPage,
+    LogonPage,
     TabsPage
   ],
   providers: [
