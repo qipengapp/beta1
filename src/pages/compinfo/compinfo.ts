@@ -47,7 +47,7 @@ export class CompinfoPage {
     this.isReadOnly = true;
     setTimeout(() => {
       this.isSubmitClicked = false;
-      alert("submitSR");
+      alert("This is submitSR");
     }, 1500);
   }
 
