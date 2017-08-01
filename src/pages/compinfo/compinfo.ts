@@ -39,7 +39,7 @@ export class CompinfoPage {
   //编辑SR
   editSR() {
     this.isReadOnly = false;
-    alert("editSR");
+    alert("This is editSR");
   }
   //提交SR
   submitSR() {
