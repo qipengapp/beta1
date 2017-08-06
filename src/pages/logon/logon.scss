@@ -1,7 +1,26 @@
 page-logon {
-    .colintest{
-        background: url("../assets/images/login_bk.png");
+    .bk_w{
+        // background: url("../assets/images/login_bk.png");
+        background: url("../assets/images/bk_1.jpg");
+        background-size: 100% auto;
+    }
 
+    .bk_h{
+        // background: url("../assets/images/login_bk.png");
+        background: url("../assets/images/bk_1.jpg");
+        background-size: auto 100%;
+    }
+
+    ion-content{
+        .login_title_bk{
+            // filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;
+            background: url("../assets/images/navbar_bk_img.png");
+
+            .toolbar-background{
+                background: none;
+            }
+        }
+        
         ion-card{
             background: none;
             border:none;
@@ -25,6 +44,7 @@ page-logon {
                 width: 50%;
                 max-width: 170px;
                 text-align: center;
+                border-radius: 50%;
             }
         }
 
@@ -43,6 +63,7 @@ page-logon {
             margin: 0px auto;
             border-radius: 64px;
             background: url("../assets/images/input_bk_img.png");
+            // background: url("../assets/images/bk_1.jpg");
             padding: 2px 15px 2px 15px;
         }
 
@@ -50,6 +71,11 @@ page-logon {
             input{
                 color: #fff;
             }
+
+            input::-webkit-input-placeholder { color:#fff; }
+            input:-moz-placeholder { color:#fff; }
+            input::-moz-placeholder { color:#fff; }
+            input:-ms-input-placeholder { color:#fff; }
         }
 
         .login_btn{

@@ -16,8 +16,10 @@ import { AlertController } from 'ionic-angular';
 export class LogonPage {
   private input_pwd:string;
   private input_phone:string;
+  private bk_css:string;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+      screen.width > screen.height ? this.bk_css = "bk_w" : this.bk_css = "bk_h";
   }
 
   ionViewDidLoad() {

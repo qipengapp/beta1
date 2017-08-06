@@ -1,0 +1,27 @@
+page-login-select {
+    .bk_w{
+        // background: url("../assets/images/login_bk.png");
+        background: url("../assets/images/bk_2.jpg");
+        background-size: 100% auto;
+    }
+
+    .bk_h{
+        // background: url("../assets/images/login_bk.png");
+        background: url("../assets/images/bk_2.jpg");
+        background-size: auto 100%;
+    }
+
+    ion-content{
+        .grid_bk{
+            text-align: center;
+            position: fixed;
+            bottom: 5%;
+            
+            .login_btn{
+                width: 85%;
+                max-width: 356px;
+                // filter:alpha(Opacity=90);-moz-opacity:0.9;opacity: 0.9;
+            }
+        }
+    }
+}

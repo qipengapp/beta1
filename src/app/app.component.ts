@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LogonPage } from '../pages/logon/logon'
+import { LoginSelectPage } from '../pages/login-select/login-select'
 
 import { Storage } from '@ionic/Storage';
 
@@ -13,8 +14,10 @@ import { Storage } from '@ionic/Storage';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  //rootPage:any = WelcomePage;
-   rootPage:any = LogonPage;
+  // rootPage:any = WelcomePage;
+  // rootPage:any = LogonPage;
+  // rootPage:any = TabsPage;
+  rootPage:any = LoginSelectPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public storage: Storage) {
     platform.ready().then(() => {
