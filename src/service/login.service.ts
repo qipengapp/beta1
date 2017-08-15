@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/Storage';
-import { HttpService } from "../../service/http.service";
-import { UserService } from "../../service/user.service";
-import { UserBean } from "../../service/user.bean";
+import { HttpService } from "./http.service";
+import { UserService } from "./user.service";
+import { UserBean } from "./user.bean";
 import { CodeBean } from "./code.bean";
 import { NavController, NavParams } from 'ionic-angular';
-import { DatePipe } from '@angular/common';
 import 'rxjs/add/operator/toPromise';
 // import { Observable } from "rxjs";
 // import { JWT } from 'jsonwebtoken';
@@ -13,11 +12,9 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class LoginService
 {
-    private host:string;
-    constructor( public myhttp:HttpService, private datePipe: DatePipe, public b_code: CodeBean, public localStorage: Storage) {
+    constructor( public myhttp:HttpService, public b_code: CodeBean , public localStorage: Storage) {
         // public jwt: JWT,
         // public user:UserBean
-        this.host = "http://localhost:8080";
     }
 
     private GetNewIdCode() : void
@@ -36,29 +33,12 @@ export class LoginService
         // @预留发送短信代码调用区域
     }
 
-    public reg(input_phone : string) : any
-    {
-        let loginDate = new Date();
-        let date_str = this.datePipe.transform(loginDate, "yyyy-MM-dd HH:mm:ss");
-        let url = this.host + "/api/reguser";
-        let user = {"userPhone": input_phone, "loginDate": date_str};
-
-        console.log("##### date_str:" + date_str);
-
-        this.myhttp.get(url, { search: user}).then((json) => {
-            console.log("##### function -> reg -> json:" + json);
-            // user = json;
-
-            // console.log("****************** 5 xxxxxx:" + JSON.stringify(json));
-        });
-    }
-
     public SendLoginStatus(input_phone : string) : boolean
     {
         // @登记用户的登录
         let loginDate = new Date();
         let user:any = [];
-        let url = this.host + "/api/getuser";
+        let url = "http://localhost:8080/api/getuser";
         // this.user.setUserPhone(input_phone);
         // this.user.setLoginDate(loginDate);
         // localStorage.setItem("userPhone", input_phone);

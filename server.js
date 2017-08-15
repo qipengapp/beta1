@@ -58,8 +58,15 @@ var srlistSchema = mongoose.Schema({
     val: String
 });
 
+var userSchema = mongoose.Schema({
+    user_phone: String,
+    login_date: String
+});
+
 // Models
 var srListModel = mongoose.model('srlists', srlistSchema);
+var userModel = mongoose.model('userlists', userSchema);
+// var userlistModel = mongoose.model('userlists', userlistSchema);
 
 // srlistSchema.methods.speak = function () {
 //   var greeting = this.name
@@ -71,6 +78,49 @@ var srListModel = mongoose.model('srlists', srlistSchema);
 // console.log(listing.name);
 
 // Routes
+app.get('/api/reguser', function(req, res){
+    console.log("Routes -- reguser -- start")
+    console.log("Routes -- reguser -- req.query:" + req.query);
+    console.log("Routes -- reguser -- req.query.userPhone:" + req.query.userPhone);
+    console.log("Routes -- reguser -- req.query.loginDate:" + req.query.loginDate);
+
+    userModel.findOne({"userPhone": req.query.userPhone}, function (err, docs) {
+        console.log("Routes -- reguser -- findOne -- docs :" + docs);
+        if(docs == null)
+        {
+            console.log("Routes -- reguser -- findOne -- null Start");
+
+            let user = {user_phone: req.query.userPhone, login_date: req.query.loginDate};
+            // let user = {userPhone: 'test01', loginDate: 'test'};
+
+            // console.log("Routes -- reguser -- findOne -- user:" + user);
+            // {user_phone: 'test01', login_date: 'test'}
+
+            var user_model = new userModel(user);
+
+            console.log("Routes -- reguser -- findOne -- user_model.new");
+
+            user_model.save(user_model);
+
+            console.log("Routes -- reguser -- findOne -- user_model.save");
+            // res.send(user);
+            res.json(user);
+            // console.log("Routes -- jwt" + jwt.sign(user, process.env.JWT_SECRET));
+            // var user = new userlistModel({
+            //     userPhone: req.query.userPhone,
+            //     userToken: 
+            //     val: 'x' + i
+            // });
+        }
+        else
+        {
+
+        }
+
+        // res.json(docs);
+    });
+});
+
 app.get('/api/getsrlist', function(req, res){
     console.log("Routes -- getsrlist");
 
@@ -111,7 +161,7 @@ app.get('/api/getuser', function(req, res){
         loginDate: [{Date: String}]
     });
 
-    var userlistModel = mongoose.model('userlists', userlistSchema);
+    // var userlistModel = mongoose.model('userlists', userlistSchema);
 
     console.log("Routes -- getuser");
     console.log(req.query);

@@ -7,8 +7,6 @@ export class CodeBean
     private idDateTime: Date;
 
     constructor() {
-        this.idCode = "";
-        this.idDateTime = new Date();
     }
 
     public getIdCode() : string

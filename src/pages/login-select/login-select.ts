@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { LogonPage } from '../logon/logon';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the LoginSelectPage page.
@@ -28,6 +29,10 @@ export class LoginSelectPage {
     // this.navCtrl.setRoot(LogonPage);
     // this.navCtrl.push(LogonPage, { IndustrylistCallBack: this.IndustrylistCallBack });
     this.navCtrl.push(LogonPage);
+  }
+
+  public reg(): void {
+    this.navCtrl.push(LoginPage);
   }
 
 }

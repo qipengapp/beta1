@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the LogonPage page.
@@ -19,7 +20,7 @@ export class LogonPage {
   private bk_css:string;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
-      screen.width > screen.height ? this.bk_css = "bk_w" : this.bk_css = "bk_h";
+      // screen.width > screen.height ? this.bk_css = "bk_w" : this.bk_css = "bk_h";
   }
 
   ionViewDidLoad() {
@@ -33,6 +34,10 @@ export class LogonPage {
       buttons: [btn_title]
     });
     alert.present();
+  }
+
+  public reg(): void {
+    this.navCtrl.push(LoginPage);
   }
 
   public login(): void {

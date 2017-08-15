@@ -21,10 +21,22 @@
       <ion-col>
         <ion-input #code type="text" placeholder="请输入密码" [(ngModel)]="input_pwd"></ion-input>
       </ion-col>
-      <!-- <ion-col col-auto text-right>
-        <button ion-button (click)="getPhoneCode()">{{bt_msg}}</button>
-      </ion-col> -->
     </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input #code type="text" placeholder="再次输入密码" [(ngModel)]="input_repwd"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <div class="hd15 hd_md pd_2">
+      <div class="wd70 fl_left hd100">
+        <ion-input #code type="text" placeholder="请输入验证码" class="bk_f6 hd100" [(ngModel)]="input_code">
+        </ion-input>
+      </div>
+      <div class="wd30 fl_left hd100">
+        <button ion-button (click)="getPhoneCode()">{{bt_msg}}</button>
+      </div>
+    </div>
 
     <ion-row>
       <ion-col>

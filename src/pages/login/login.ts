@@ -6,8 +6,8 @@ import { AlertController } from 'ionic-angular';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
-  providers: [LoginService]
-})
+  providers: [LoginService]  
+ })
 export class LoginPage {
   public input_code: string;
   public input_phone: string;
@@ -130,8 +130,9 @@ export class LoginPage {
         }
         else
         {
-            this.serve.SendLoginStatus(this.input_phone);
+            // this.serve.SendLoginStatus(this.input_phone);
             // this.showAlert(this.err, '确定');
+            this.serve.reg(this.input_phone);
         }
     }
     else

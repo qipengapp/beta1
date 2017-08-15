@@ -10,7 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CompinfoPage } from '../pages/compinfo/compinfo';
 import { IndustrylistPage } from '../pages/industrylist/industrylist';
 import { WelcomePage } from '../pages/welcome/welcome';
-// import { LoginPage } from '../pages/login/login'
+import { LoginPage } from '../pages/login/login'
 import { LogonPage } from '../pages/logon/logon'
 import { LoginSelectPage } from '../pages/login-select/login-select'
 import { CodeBean } from '../pages/login/code.bean';
@@ -22,6 +22,7 @@ import { UserService } from "../service/user.service";
 import { UserBean } from "../service/user.bean";
 import { HttpModule } from "@angular/http";
 import { CityPickerModule } from  "ionic2-city-picker";
+import { DatePipe } from '@angular/common';
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
@@ -36,8 +37,8 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     IndustrylistPage,
     WelcomePage,
     LogonPage,
-    LoginSelectPage
-    // LoginPage
+    LoginSelectPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     CompinfoPage,
     IndustrylistPage,
     WelcomePage,
-    // LoginPage,
+    LoginPage,
     LogonPage,
     LoginSelectPage,
     TabsPage
@@ -70,7 +71,8 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     HttpService,
     UserService,
     UserBean,
-    CodeBean
+    CodeBean,
+    DatePipe
   ]
 })
 export class AppModule {}
