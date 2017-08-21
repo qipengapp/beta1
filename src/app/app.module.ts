@@ -25,6 +25,7 @@ import { CityPickerModule } from  "ionic2-city-picker";
 import { DatePipe } from '@angular/common';
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { HomenavgComponent } from '../components/homenavg/homenavg';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
     WelcomePage,
     LogonPage,
     LoginSelectPage,
-    LoginPage
+    LoginPage,
+    HomenavgComponent
   ],
   imports: [
     BrowserModule,
